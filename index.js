@@ -57,6 +57,23 @@ class Formulario extends Component {
             onChange={(ev) => this.sincronizarCambios(ev.target)}
             />
           </div>
+          <div>
+            <textarea 
+            id="direccion" 
+            name="direccion" 
+            type="text-area" 
+            placeholder="Direccion"
+            onChange={(ev) => this.sincronizarCambios(ev.target)}
+            />
+          </div>
+          <div>
+          <label for="prioridad">Prioridad: </label>
+            <select id="prioridad" onChange={(ev) => this.sincronizarCambios(ev.target)}>
+            <option value="leve">Leve</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+            </select>
+          </div>
           <button type="submit" onClick={this.enviarFormulario}>Enviar</button>
           <button type="reset">Limpiar</button>
         </form>

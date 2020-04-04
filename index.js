@@ -14,9 +14,16 @@ class Formulario extends Component {
     }
   }
 
-  sincronizarCambios(control) {
+  sincronizarCambios(control, expresion) {
     const { name, value } = control;
-    console.log(name, value);
+    const state = {};
+    state[name] = value;
+    this.setState(state);
+  }
+
+  enviarFormulario = (e) => {
+    e.preventDefault();
+    console.log(this.state)
   }
 
   render() {
@@ -38,7 +45,7 @@ class Formulario extends Component {
             name="correo" 
             type="text" 
             placeholder="Correo"
-            onChange={(ev) => this.sincronizarCambios(ev.target)}
+            onChange={(ev) => this.sincronizarCambios(ev.target, '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}')}
             />
           </div>
           <div>
@@ -50,7 +57,7 @@ class Formulario extends Component {
             onChange={(ev) => this.sincronizarCambios(ev.target)}
             />
           </div>
-          <button type="submit">Enviar</button>
+          <button type="submit" onClick={this.enviarFormulario}>Enviar</button>
           <button type="reset">Limpiar</button>
         </form>
       </div>

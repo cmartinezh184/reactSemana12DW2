@@ -13,17 +13,11 @@ class Formulario extends Component {
       password: ''
     }
   }
-sincronizarNombre(nombre) {
-  console.log(nombre.value)
-}
 
-sincronizarCorreo(correo) {
-  console.log(correo.value)
-}
-
-sincronizarPassword(password) {
-  console.log(password.value)
-}
+  sincronizarCambios(control) {
+    const { name, value } = control;
+    console.log(name, value);
+  }
 
   render() {
     return (
@@ -35,7 +29,7 @@ sincronizarPassword(password) {
             name="nombre" 
             type="text"
             placeholder="Nombre"
-            onChange={(ev) => this.sincronizarNombre(ev.target)}
+            onChange={(ev) => this.sincronizarCambios(ev.target)}
             />
           </div>
           <div>
@@ -44,7 +38,7 @@ sincronizarPassword(password) {
             name="correo" 
             type="text" 
             placeholder="Correo"
-            onChange={(ev) => this.sincronizarCorreo(ev.target)}
+            onChange={(ev) => this.sincronizarCambios(ev.target)}
             />
           </div>
           <div>
@@ -53,7 +47,7 @@ sincronizarPassword(password) {
             name="password" 
             type="password" 
             placeholder="Contraseña"
-            onChange={(ev) => this.sincronizarPassword(ev.target)}
+            onChange={(ev) => this.sincronizarCambios(ev.target)}
             />
           </div>
           <button type="submit">Enviar</button>

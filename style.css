@@ -1,0 +1,12 @@
+h1, p {
+  font-family: Lato;
+}
+
+body {
+  background: yellow;
+  background: -webkit-linear-gradient(to right)
+}
+
+.texto {
+  font-weight: bold;
+}
